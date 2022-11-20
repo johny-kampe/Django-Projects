@@ -4,6 +4,7 @@
 {% block body_block %}
 <h1>Home Page</h1>
 
+<h2>Musicians</h2>
 <ul>
   {% if musician_list %}
 
@@ -12,6 +13,18 @@
   {% endfor %}
   {% else %}
     <h3>No Musicians yet</h3>
+  {% endif%}
+</ul>
+
+<h2>Albums</h2>
+<ul>
+  {% if album_list %}
+
+  {% for album in album_list %}
+    <li>{{ album.artist}}, {{ album.name}}, {{ album.release_date}}, {{ album.num_stars}}</li>
+  {% endfor %}
+  {% else %}
+    <h3>No Album yet</h3>
   {% endif%}
 </ul>
 
